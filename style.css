@@ -1,0 +1,103 @@
+/* Estilos personalizados para o Portfólio Dark Theme */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%);
+    border-bottom: 1px solid #2d2d2d;
+}
+
+/* Estilo base para os cards */
+.card {
+    background-color: #161b22; /* Um tom de cinza escuro bem elegante */
+    border: 1px solid #30363d;   /* Borda sutil */
+    border-radius: 12px;        /* Bordas levemente mais arredondadas */
+    transition: all 0.3s ease;  /* Suaviza todas as animações do card */
+}
+
+/* Efeito Hover do Card */
+.card:hover {
+    transform: translateY(-6px); /* Joga o card levemente para cima */
+    border-color: #58a6ff;       /* Muda a cor da borda para um azul claro */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.2); /* Sombra profunda com brilho azulado */
+}
+
+/* Deixando os botões com transição suave também */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.02); /* Dá um leve zoom no botão ao passar o mouse */
+}
+.card-title {
+    color: #ffffff;
+}
+
+.btn-github {
+    background-color: #24292e;
+    color: #fff;
+    border: none;
+}
+
+.btn-github:hover {
+    background-color: #2f363d;
+    color: #fff;
+    transform: scale(1.02);
+}
+/* Estilo moderno para o botão Ver Site em Azul */
+.btn-site {
+    background: linear-gradient(135deg, #1f6feb, #388bfd); /* Degradê azul moderno */
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 10px rgba(56, 139, 253, 0.25);
+}
+
+/* Efeito Hover do Botão Azul */
+.btn-site:hover {
+    background: linear-gradient(135deg, #388bfd, #58a6ff);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(56, 139, 253, 0.4);
+}
+
+/* Animação sutil no ícone do globo ao passar o mouse */
+.btn-site:hover .icon-globe {
+    transform: rotate(15deg) scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.icon-globe {
+    transition: transform 0.2s ease;
+}
+.card-projeto {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cria uma camada escura por cima da imagem para o texto continuar legível */
+.card-projeto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.85); /* Fundo escuro semi-transparente */
+    z-index: 1;
+}
+
+.card-projeto .card-body {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima da camada escura */
+}

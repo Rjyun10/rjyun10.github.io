@@ -1,9 +1,19 @@
 const username = 'Rjyun10';
 const projectsContainer = document.getElementById('projects-container');
 
-// 🛠️ Repositórios que você deseja esconder do portfólio:
+
+const projetosDestaque = [
+    'EstudoHub',
+    'LabCiencia', 
+    'DarkInvest-2026',
+    'InvestSim-2026',
+    'Simulador-de-Investimentos-2026',
+    'A-Conjectura-de-Collatz',
+    'Garagem-Seleta'
+];
+
 const projetosIgnorados = [
-    'EstudoHub', 
+    'BootStrap', 
     'Academia-Alta-Forma',
     'GearHeadMind',
     'world_pixelated',
@@ -15,7 +25,8 @@ const projetosIgnorados = [
     'Todas-as-aulas-de-WebDesinger',
     'HTML_1.2',
     'Atividades-WebDesinger-HTML-e-CSS',
-    'Python_Pandas_Final'
+    'Python_Pandas_Final',
+    'Rjyun10.github.io'
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,13 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchGitHubProjects();
 });
 
-// Renderiza o card com o novo botão "Ver Site" (GitHub Pages) e o botão de Código
 function renderCard(title, desc, repoLink, language) {
     if (!projectsContainer) return;
 
-    // Gera automaticamente o link do GitHub Pages com base no nome do repositório
-    const repoNameFormatted = title.toLowerCase();
-    const pagesLink = `https://${username}.github.io/${repoNameFormatted}/`;
+    const pagesLink = `https://${username}.github.io/${title}/`;
 
     const cardCol = document.createElement('div');
     cardCol.className = 'col-md-4';
@@ -61,20 +69,29 @@ function renderCard(title, desc, repoLink, language) {
     projectsContainer.appendChild(cardCol);
 }
 
-// Busca os repositórios públicos direto da API do GitHub filtrando os testes
 async function fetchGitHubProjects() {
     try {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
         if (!response.ok) throw new Error('Erro ao buscar repositórios do GitHub');
         
-        const repos = await response.json();
+        let repos = await response.json();
+
+        repos = repos.filter(repo => !projetosIgnorados.includes(repo.name));
+
+        repos.sort((a, b) => {
+            const indexA = projetosDestaque.indexOf(a.name);
+            const indexB = projetosDestaque.indexOf(b.name);
+
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+            return 0;
+        });
 
         repos.forEach(repo => {
-            // Se o repositório NÃO estiver na lista de ignorados, exibe no portfólio
-            if (!projetosIgnorados.includes(repo.name)) {
-                renderCard(repo.name, repo.description, repo.html_url, repo.language);
-            }
+            renderCard(repo.name, repo.description, repo.html_url, repo.language);
         });
+
     } catch (error) {
         console.error('Erro:', error);
     }

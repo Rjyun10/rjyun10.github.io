@@ -1,46 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Projetos</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jyun | Portfólio & Desenvolvedor Web</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- FontAwesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
 
-    <!-- Seção Principal (Hero) -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-5 fw-bold">Meu Portfólio</h1>
-            <a href="https://github.com/Rjyun10" id="github-profile-link" target="_blank" class="btn btn-github mt-2">
-                <i class="fab fa-github"></i> Visitar meu GitHub
-            </a>
+    <!-- Chuva Matrix Global (Fixa de fundo em todo o site) -->
+    <div class="matrix-global-container">
+      <div class="matrix-pattern">
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+        <div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div><div class="matrix-column"></div>
+      </div>
+    </div>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold tracking-wider" href="#home">
+          <i class="fas fa-terminal text-info me-2"></i>JYUN<span class="text-white">.dev</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Alternar navegação"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
         </div>
-    </header>
+      </div>
+    </nav>
 
-    <!-- Seção de Projetos Unificada (Apenas GitHub) -->
-    <main class="container my-5">
-        <h2 class="h3 mb-4 text-center">Meus Projetos</h2>
+    <!-- Seção Home / Hero -->
+    <section id="home" class="hero-section text-center d-flex align-items-center position-relative">
+      <div class="container position-relative py-5">
+        <div class="badge-status mb-3 px-3 py-1 rounded-pill d-inline-block border border-info text-info bg-dark bg-opacity-75 shadow-sm">
+          <i class="fas fa-circle text-info fa-xs me-2 pulse-dot"></i> Disponível para novos projetos
+        </div>
+        <h1 class="display-3 fw-bold mb-3 text-white">
+          Olá, eu sou <span class="text-gradient">Jyun</span>
+        </h1>
+        <p class="lead mb-4 text-light opacity-85 fs-4">
+          Building the digital matrix, <span class="text-info fw-semibold">one line of code at a time.</span>
+        </p>
+        <div class="d-flex justify-content-center gap-3 mb-5">
+          <a href="#projetos" class="btn btn-site btn-lg px-4 shadow-glow text-dark fw-bold">
+            <i class="fas fa-code me-2"></i> Ver Projetos
+          </a>
+          <a href="https://github.com/Rjyun10" id="github-profile-link" target="_blank" class="btn btn-outline-light btn-lg px-4">
+            <i class="fab fa-github me-2"></i> GitHub
+          </a>
+        </div>
         
-        <!-- Container onde os projetos do GitHub aparecem -->
-        <div id="projects-container" class="row g-4">
-            <!-- Os cards aparecem aqui automaticamente -->
+        <!-- Indicador de Scroll -->
+        <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-3">
+          <a href="#sobre" class="text-decoration-none text-muted">
+            <i class="fas fa-chevron-down fa-bounce text-info"></i>
+          </a>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- Rodapé -->
-    <footer class="text-center py-4 border-top border-secondary text-muted">
-        <p>&copy; 2026 - Meu Portfólio by Jyun</p>
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="py-5 position-relative">
+      <div class="container py-4">
+        <h2 class="h3 mb-2 text-center fw-bold text-white">Sobre Mim</h2>
+        <p class="text-center text-muted mb-5">Conheça um pouco da minha trajetória e paixão por tecnologia</p>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="glass-card p-4 p-md-5 rounded-4 shadow-lg">
+              <div class="row align-items-center g-4">
+                <div class="col-md-4 text-center">
+                  <div class="avatar-box position-relative d-inline-block p-4 rounded-circle bg-info bg-opacity-10 border border-info">
+                    <i class="fas fa-laptop-code fa-4x text-info"></i>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <h4 class="fw-bold mb-3 text-white">Desenvolvedor Web em Evolução</h4>
+                  <p class="text-secondary mb-4 leading-relaxed">
+                    Sou um entusiasta da tecnologia focado em criar experiências digitais eficientes, limpas e responsivas. 
+                    Estou sempre explorando novas ferramentas arquiteturais e desenvolvendo soluções completas que unem design moderno a códigos otimizados.
+                  </p>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="stat-badge px-3 py-2 rounded bg-black border border-info text-center">
+                      <span class="d-block fw-bold text-info fs-5">+10</span>
+                      <small class="text-muted">Repositórios</small>
+                    </div>
+                    <div class="stat-badge px-3 py-2 rounded bg-black border border-info text-center">
+                      <span class="d-block fw-bold text-info fs-5">Foco</span>
+                      <small class="text-muted">Clean Code</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="py-5">
+      <div class="container py-4">
+        <h2 class="h3 mb-2 text-center fw-bold text-white">Minhas Habilidades</h2>
+        <p class="text-center text-muted mb-5">Tecnologias e ferramentas que utilizo no dia a dia</p>
+        
+        <div class="row g-4 text-center justify-content-center">
+          <div class="col-6 col-md-3">
+            <div class="p-4 rounded-4 card-skill h-100 shadow-sm">
+              <i class="fab fa-html5 fa-3x text-danger mb-3 icon-hover"></i>
+              <h5 class="fw-semibold mb-1 text-white">HTML5 & CSS3</h5>
+              <p class="small text-muted mb-0">Estrutura & Estilização</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 rounded-4 card-skill h-100 shadow-sm">
+              <i class="fab fa-js fa-3x text-warning mb-3 icon-hover"></i>
+              <h5 class="fw-semibold mb-1 text-white">JavaScript</h5>
+              <p class="small text-muted mb-0">Lógica & Dinamismo</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 rounded-4 card-skill h-100 shadow-sm">
+              <i class="fab fa-bootstrap fa-3x mb-3 icon-hover" style="color: #a855f7"></i>
+              <h5 class="fw-semibold mb-1 text-white">Bootstrap 5</h5>
+              <p class="small text-muted mb-0">Responsividade</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="p-4 rounded-4 card-skill h-100 shadow-sm">
+              <i class="fab fa-git-alt fa-3x mb-3 icon-hover" style="color: #f05032"></i>
+              <h5 class="fw-semibold mb-1 text-white">Git & GitHub</h5>
+              <p class="small text-muted mb-0">Versionamento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="py-5">
+      <div class="container py-4">
+        <h2 class="h3 mb-2 text-center fw-bold text-white">Meus Projetos</h2>
+        <p class="text-center text-muted mb-5">
+          Trabalhos recentes carregados diretamente do GitHub com paginação inteligente.
+        </p>
+
+        <div id="projects-container" class="row g-4">
+          <div class="col-12 text-center py-5" id="loading-projects">
+            <div class="spinner-border text-info" role="status">
+              <span class="visually-hidden">Carregando projetos...</span>
+            </div>
+            <p class="text-muted mt-3">Buscando repositórios no GitHub...</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <button
+            id="btn-load-more"
+            class="btn btn-outline-info px-5 py-2 d-none rounded-pill shadow-sm fw-semibold text-white"
+          >
+            <i class="fas fa-plus-circle me-2"></i> Mostrar Mais Projetos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-5">
+      <div class="container text-center py-4 position-relative" style="z-index: 2;">
+        <h2 class="h3 mb-2 fw-bold text-white">Vamos Trabalhar Juntos?</h2>
+        <p class="text-muted mb-4">
+          Tem alguma dúvida, proposta ou quer trocar ideia sobre tecnologia? Minha caixa de entrada está aberta!
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a
+            href="https://github.com/Rjyun10"
+            target="_blank"
+            class="btn btn-dark border border-info px-5 py-3 rounded-pill shadow-sm"
+          >
+            <i class="fab fa-github fa-lg me-2"></i> Acessar GitHub
+          </a>
+          <a
+            href="mailto:seu-email@exemplo.com"
+            class="btn btn-outline-light border px-5 py-3 rounded-pill shadow-sm"
+          >
+            <i class="fas fa-envelope fa-lg me-2"></i> Enviar E-mail
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-4 border-top bg-black bg-opacity-75 position-relative" style="z-index: 2;">
+      <p class="mb-0 text-muted small">&copy; 2026 Jyun. Desenvolvido com dedicação e código limpo.</p>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Personalizado -->
+    <!-- Script Principal -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

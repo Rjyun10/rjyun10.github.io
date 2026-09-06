@@ -218,7 +218,7 @@ section {
 
 /* Navbar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--cor-borda);
 }

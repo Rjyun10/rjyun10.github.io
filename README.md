@@ -2,7 +2,7 @@
 
 Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido para centralizar e exibir os meus principais trabalhos e estudos em desenvolvimento web, puxando os repositórios diretamente da API do GitHub.
 
-🔗 **Acesse o site online:** [https://rjyun10.github.io](https://rjyun10.github.io/Portifolio)
+🔗 **Acesse o site online:** [https://rjyun10.github.io/](https://rjyun10.github.io/)
 
 ---
 
